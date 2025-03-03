@@ -23,8 +23,8 @@ def arima(n):
     X = stock_data[[f'lag_{lag}' for lag in range(1, lags + 1)]]
     y = stock_data['Log_Close']
     split_index = int(len(stock_data) * 0.9)
-    X_test = X.iloc[-1].values.reshape(1, -1)  # Ensure 2D
-    y_test = y.iloc[-1]  # Scalar, no .values needed
+    X_test = X.iloc[-1].values.reshape(1, -1)  
+    y_test = y.iloc[-1]
     X_train = X.iloc[:-1]
     y_train = y.iloc[:-1]
     model = LinearRegression()
