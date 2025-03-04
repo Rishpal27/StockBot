@@ -32,7 +32,7 @@ def arima(n):
     #print(f"p-value: {adf_result[1]}")
     #print("The R^2 accuracy of the model is: ",acc*100,"%")
     def future(n):
-        latest_data = y_train[-n:] # Get the last 4 log-transformed stock prices
+        latest_data = y_train[-n:] 
         coefficients=model.coef_
         intercept=model.intercept_
         sum=intercept
@@ -40,4 +40,4 @@ def arima(n):
             sum= sum+coefficients[i]*latest_data[i]
         print(np.exp(sum))
     future(n)
-print(arima(52))
+print(arima(n))
